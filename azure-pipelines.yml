@@ -23,7 +23,7 @@ steps:
   inputs:
     applicationType: 'other'
     fortifyBuildId: '8ball'
-    runFortifyRulepackUpdate: true
+    runFortifyRulepackUpdate: false
     fortifyScanType: 'LocalScan'
 
 #- task: FortifySCA@6

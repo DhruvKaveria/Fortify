@@ -27,6 +27,10 @@ steps:
     RunFortifyRulepackUpdate: false
 - task: FortifySCA@7
   inputs:
+    applicationType: 'other'
+    fortifyBuildId: '8ball'
+    runFortifyRulepackUpdate: false
+    fortifyScanType: 'LocalScan'
 - task: FortifySCA@7
   inputs:
     applicationType: 'dotnet'
@@ -35,10 +39,7 @@ steps:
     runFortifyUpload: true
     fortifyServerName: 'SSC'
     fortifyApplicationName: '8Ball'
-    applicationType: 'other'
-    fortifyBuildId: '8ball'
-    runFortifyRulepackUpdate: false
-    fortifyScanType: 'LocalScan'
+    
 
 #- task: FortifySCA@6
 #  inputs:

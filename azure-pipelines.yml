@@ -19,9 +19,8 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-- task: FortifySCA@7
+- task: FortifySCA@6
   inputs:
-    licenseFile: 'C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\fortify.license'
     applicationType: 'other'
     fortifyBuildId: '8ball'
     runFortifyRulepackUpdate: true

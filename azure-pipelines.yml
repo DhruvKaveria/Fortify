@@ -19,6 +19,12 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+- task: InstallFortifySCA@7
+  inputs:
+    InstallerPath: 'C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\Fortify_SCA_and_Apps_21.2.3_windows_x64.exe.'
+    VS2015: false
+    LicenseFile: 'C:\Users\Administrator\Downloads\Fortify.License'
+    RunFortifyRulepackUpdate: false
 - task: FortifySCA@7
   inputs:
     applicationType: 'other'

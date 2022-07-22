@@ -20,6 +20,16 @@ steps:
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
 
+- task: FortifyScanCentralSAST@7
+  inputs:
+    scanCentralCtrlUrl: 'http://172.168.50.147:8080/scancentral-ctrl/'
+    scanCentralClientToken: '$(ScanCentral.ClientToken)'
+    sscUrl: 'http://172.168.50.147:8081/ssc/#!/'
+    sscCiToken: '$(ScanCentral.SscCiToken)'
+    uploadToSSC: false
+    buildTool: 'mvn'
+    skipBuild: true
+
 #- task: FortifySCA@6
 #  inputs:
 #    runBuildTranslate: true

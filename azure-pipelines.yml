@@ -19,27 +19,19 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-- task: InstallFortifySCA@7
-  inputs:
-    InstallerPath: 'C:\Program Files\Fortify\Fortify_SCA_and_Apps_21.2.3\Fortify_SCA_and_Apps_21.2.3_windows_x64.exe.'
-    VS2015: false
-    LicenseFile: 'C:\Users\Administrator\Downloads\Fortify.License'
-    RunFortifyRulepackUpdate: false
 - task: FortifySCA@7
   inputs:
+    runBuildTranslate: true
     applicationType: 'other'
-    fortifyBuildId: '8ball'
+    buildToolOptions: 'mvn com.fortify.sca.plugins.maven:sca-maven-plugin:translate'
+    fortifyBuildId: 'MananDoshi04.8Ball'
+    runFortifyClean: true
     runFortifyRulepackUpdate: false
-    fortifyScanType: 'LocalScan'
-- task: FortifySCA@7
-  inputs:
-    applicationType: 'dotnet'
-    fortifyProjects: '**\*.sln'
     fortifyScanType: 'LocalScan'
     runFortifyUpload: true
     fortifyServerName: 'SSC'
-    fortifyApplicationName: '8Ball'
-    
+    fortifyApplicationName: 'EightBall'
+    fortifyApplicationVersion: '1'
 
 #- task: FortifySCA@6
 #  inputs:

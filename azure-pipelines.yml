@@ -21,14 +21,14 @@ steps:
     sonarQubeRunAnalysis: false
 - task: Docker@2
   inputs:
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    containerRegistry: 'Docker Hub'
+    command: 'login'
 - task: Docker@2
   inputs:
     containerRegistry: 'Docker Hub'
     repository: 'fortifydocker/fortify-ci-tools'
     command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: 'fortifydocker/fortify-ci-tools/Dockerfile'
 
 
 - task: FortifySCA@7

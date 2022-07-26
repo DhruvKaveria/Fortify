@@ -26,10 +26,10 @@ steps:
     containerRegistry: 'Docker Hub'
 
 - task: Docker@2
-  displayName: Build
   inputs:
-    command: 'build'
+    containerRegistry: 'Docker Hub'
     repository: 'hawxy13/fortifydocker/fortify-ci-tools'
+    command: 'build'
 
 
 - task: FortifySCA@7

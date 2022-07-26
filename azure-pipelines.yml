@@ -24,6 +24,7 @@ steps:
     containerRegistry: 'Docker Hub'
     repository: 'fortifydocker/fortify-ci-tools'
     command: 'buildAndPush'
+    Dockerfile: '**\Dockerfile'
 
 - task: FortifySCA@7
   inputs:

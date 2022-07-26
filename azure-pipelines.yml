@@ -23,20 +23,13 @@ steps:
   inputs:
     containerRegistry: 'Docker Hub'
     command: 'login'
-- task: DockerCompose@0
-  inputs:
-    containerregistrytype: 'Container Registry'
-    dockerRegistryEndpoint: 'Docker Hub'
-    dockerComposeFile: '**/docker-compose.yml'
-    action: 'Run a Docker Compose command'
-    dockerComposeCommand: 'docker pull fortifydocker/fortify-ci-tools'
+
 - task: Docker@2
   inputs:
     containerRegistry: 'Docker Hub'
-    repository: 'fortifydocker/fortify-ci-tools'
-    command: 'buildAndPush'
-    Dockerfile: '**/docker-compose.yml'
-
+    repository: '$(ImageName)'
+    command: 'build'
+    Dockerfile: 'fortifydocker/fortify-ci-tools'
 
 - task: FortifySCA@7
   inputs:

@@ -19,6 +19,13 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker Hub'
+    repository: 'fortifydocker/fortify-ci-tools'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+
 - task: FortifySCA@7
   inputs:
     runBuildTranslate: true

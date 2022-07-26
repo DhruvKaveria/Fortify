@@ -25,7 +25,7 @@ steps:
   displayName: login
   inputs:
     command: login
-    containerRegistry: DockerHub
+    containerRegistry: ogdockerhub
 - task: Docker@2
   inputs:
     command: build

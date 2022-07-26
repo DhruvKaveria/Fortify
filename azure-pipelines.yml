@@ -30,6 +30,7 @@ steps:
     command: build
     containerRegistry: Docker Hub
     repository: $(Build.SourcesDirectory)/hawxy13/fortifydocker/fortify-ci-tools
+    tags: latest
     
 
 

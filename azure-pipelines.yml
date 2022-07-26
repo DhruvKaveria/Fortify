@@ -29,7 +29,7 @@ steps:
   inputs:
     command: build
     containerRegistry: Docker Hub
-    repository: hawxy13/fortifydocker/fortify-ci-tools
+    repository: $(Build.SourcesDirectory)/hawxy13/fortifydocker/fortify-ci-tools
     
 
 
